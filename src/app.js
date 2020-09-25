@@ -6,7 +6,7 @@ app.use(express.urlencoded({extended:false}))
 
 //GET
 app.get('/', (req, res) => {
-   res.status(200).send('hello world!');
+   res.status(200).send('hello world!!');
 });
 
 //GET req Simply sends the current time
