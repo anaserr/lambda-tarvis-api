@@ -1,0 +1,27 @@
+language: node_js
+node_js:
+- '12.10.0'
+cache: npm
+before_install: true
+install:
+- npm ci
+before_script: true
+script:
+- echo "fake testing .."
+- echo "another script ..."
+after_script: true
+#serverless config credentials --provider aws --key 1234 --secret 5678
+#serverless deploy
+deploy:
+  provider: lambda
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  # provider: script
+  # - serverless config credentials --provider aws --key 1234 --secret 5678
+  # - serverless deploy
+  function_name: "api"
+  region: "eu-west-3"
+  runtime: "nodejs12.10"
+  handler_name: "lambda.handler"
+  on:
+    branch: dev
