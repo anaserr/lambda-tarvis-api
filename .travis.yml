@@ -24,4 +24,4 @@ deploy:
   runtime: "nodejs12.10"
   handler_name: "lambda.handler"
   on:
-    branch: dev
+    branch: stage
